@@ -33,8 +33,8 @@ function App() {
       <input
       type="text"
       value={input}
-      placeholder="Type a message..."
       onChange={(e) => setInput(e.target.value)}
+      placeholder="Type a message..."
   />
   <button onClick={sendMessage}>send</button>
   </div>

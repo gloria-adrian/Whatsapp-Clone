@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="widht=device-widht, initial-scale=1.0">
+        <title>Whatsapp Clone</title>
+        </head>
+        <body>
+            <hi>Whatsapp Clone</hi>
+            <input type="text" id="messageInput"placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+                <ul id="messages"></ul>
+
+                <script>
+                    var ws = new websocket("ws://localhost:8080/ws");
+
+                    ws.onmessage = function(event) {
+                        var messages = document.getElementById('messages');
+                        var message = document.createElement('li');
+                        message.textContent = event.data;
+                        messages.appendChild(message);
+                    };
+
+                    function sendMessage() {
+                        var input = document.getElementById('messageInput');
+                        ws.send(input.value);
+                        input.value = '';
+                    }
+                    </script>
+                    </body>
+                </htm>

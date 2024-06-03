@@ -2,17 +2,17 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="widht=device-widht, initial-scale=1.0">
-        <title>Whatsapp Clone</title>
+        <meta name="viewport" content="widht=device-width, initial-scale=1.0">
+        <title>WhatsApp Clone</title>
         </head>
         <body>
-            <hi>Whatsapp Clone</hi>
+            <hi>WhatsApp Clone</hi>
             <input type="text" id="messageInput"placeholder="Type a message...">
             <button onclick="sendMessage()">Send</button>
                 <ul id="messages"></ul>
 
                 <script>
-                    var ws = new websocket("ws://localhost:8080/ws");
+                    var ws = new webSocket("ws://localhost:8080/ws");
 
                     ws.onmessage = function(event) {
                         var messages = document.getElementById('messages');
@@ -28,4 +28,4 @@
                     }
                     </script>
                     </body>
-                </htm>
+                </html>

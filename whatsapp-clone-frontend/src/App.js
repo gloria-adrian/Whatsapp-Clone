@@ -9,7 +9,7 @@ function App() {
   useEffect(() =>{
     ws.current = new WebSocket("ws:/localhost:8080/ws");
     ws.current.onmessage =(event) => {
-      setMessages(prevMessages =>[...prevMessages.event.data]);
+      setMessages(prevMessages =>[...prevMessages, event.data]);
     };
     return () => {
       ws.current.close();
